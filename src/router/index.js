@@ -4,6 +4,8 @@ import Dashboard from '../views/dashboard/Dashboard.vue'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
 import MyAccount from '../views/dashboard/MyAccount.vue'
+import Clients from '../views/dashboard/Clients.vue'
+import Client from '../views/dashboard/Client.vue'
 
 import store from '../store'
 
@@ -43,6 +45,22 @@ const routes = [
     path: '/dashboard/my-account',
     name: 'MyAccount',
     component: MyAccount,
+    meta: {
+      requireLogin: true,
+    }
+  },
+  {
+    path: '/dashboard/clients',
+    name: 'Clients',
+    component: Clients,
+    meta: {
+      requireLogin: true,
+    }
+  },
+  {
+    path: '/dashboard/clients/:id',
+    name: 'Client',
+    component: Client,
     meta: {
       requireLogin: true,
     }
